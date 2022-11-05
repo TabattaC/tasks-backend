@@ -24,6 +24,7 @@ public class TaskControllerTest {
     public void setup(){
         MockitoAnnotations.initMocks(this);
     }
+
     @Test
     public void naoDeveSalvarTarefaSemDescricao() {
         Task todo = new Task();
@@ -67,7 +68,7 @@ public class TaskControllerTest {
     public void deveSalvarTarefaComSucesso() throws ValidationException {
         Task todo = new Task();
         todo.setTask("Descricao");
-        todo.setDueDate(LocalDate.of(2010, 01, 01));
+        todo.setDueDate(LocalDate.now());
         controller.save(todo);
 
         Mockito.verify(taskRepo).save(todo);
