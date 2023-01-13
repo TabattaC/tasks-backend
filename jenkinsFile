@@ -19,8 +19,10 @@ pipeline {
 
          stage ('API Test') {
             steps {
-                git credentialsId: 'TabattaC', url: 'https://github.com/TabattaC/tasks-API-testes'
-                bat 'mvn test'
+                dir('api-test'){
+                    git credentialsId: 'TabattaC', url: 'https://github.com/TabattaC/tasks-API-testes'
+                    bat 'mvn test' 
+                }
             }
         }
     }
