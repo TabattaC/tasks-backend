@@ -34,7 +34,7 @@ pipeline {
         }
          stage ('Funcional Test') {
             steps {
-                dir('Funcional Test'){
+                dir('funcional-test'){
                     git credentialsId: 'TabattaC', url: 'https://github.com/TabattaC/Tasks-TesteFuncionais'
                     bat 'mvn test' 
                 }
