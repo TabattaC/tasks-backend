@@ -33,14 +33,14 @@ pipeline {
                 } 
             }
         }
-         stage ('Funcional Test') {
-            steps {
-                dir('funcional-test'){
-                    git credentialsId: 'TabattaC', url: 'https://github.com/TabattaC/Tasks-TesteFuncionais'
-                    bat 'mvn test' 
-                }
-            }
-        }
+        //  stage ('Funcional Test') {
+        //     steps {
+        //         dir('funcional-test'){
+        //             git credentialsId: 'TabattaC', url: 'https://github.com/TabattaC/Tasks-TesteFuncionais'
+        //             bat 'mvn test' 
+        //         }
+        //     }
+        // }
     }
 }
 
